@@ -25,6 +25,11 @@ while a != 7:
         insert(mydb, titulo, autor, ano, sta)
 
     if a == 2:
+<<<<<<< HEAD
+=======
+ 
+    if a == 3:
+>>>>>>> cec2aae8980a664839b0a7723185dced635dc456
         pass
     elif a == 3:
         pass
