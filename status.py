@@ -1,10 +1,10 @@
 from conexao import connect
 
-def status_alt(mydb,pesquisa):
+def status_alt(mydb,titulo):
     
     mycursor = mydb.cursor()
     sql = "select sta from livros WHERE titulo = '%s';"
-    val = (pesquisa)
+    val = (titulo)
     mycursor.execute(sql,val)
     mydb.commit()
     veri = mycursor.fetchone()
@@ -21,7 +21,7 @@ def status_alt(mydb,pesquisa):
             if veri == 'disponível' and alt == 1:
                 mycursor = mydb.cursor()
                 sql = "UPDATE Livros SET sta = 'indisponível' WHERE titulo = '%s';"
-                val = (pesquisa)
+                val = (titulo)
                 mycursor.execute(sql,val)
                 mydb.commit()
                 veri=mycursor.fetchone()
@@ -37,7 +37,7 @@ def status_alt(mydb,pesquisa):
             elif veri == "indisponivel" and alt == 2:
                 mycursor = mydb.cursor()
                 sql = "UPDATE Livros SET sta = 'disponível' WHERE titulo = '%s';"
-                val = (pesquisa)
+                val = (titulo)
                 mycursor.execute(sql,val)
                 mydb.commit()
                 print(mycursor.rowcount, "Editado com sucesso. ")
