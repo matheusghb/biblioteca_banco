@@ -24,12 +24,7 @@ while a != 7:
         insert(mydb, titulo, autor, ano, sta)
 
     if a == 2:
-        id_livro = int(input("Digite o ID do livro que deseja editar: "))
-        novo_titulo = input("Digite o novo título: ")
-        novo_autor = input("Digite o novo autor: ")
-        novo_ano = int(input("Digite o novo ano de lançamento: "))
-        update(mydb, id_livro, novo_titulo, novo_autor, novo_ano)
-        
+ 
     if a == 3:
         pass
     if a == 4:
