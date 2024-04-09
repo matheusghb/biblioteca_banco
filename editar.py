@@ -9,5 +9,5 @@ def editar(mydb, titulo, autor, ano, sta):
 
   mydb.commit()
 
-  print(mycursor.rowcount, "Inserido com Sucesso.")
+  print(mycursor.rowcount, "editado com Sucesso XD.")
   mycursor.close()
