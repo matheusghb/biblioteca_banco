@@ -1,5 +1,7 @@
 from adicionar import insert
 from conexao import connect
+from listar import listar
+from status import status_alt
 
 a = 0
 
@@ -10,9 +12,8 @@ while a != 7:
     print ("2 - Editar")
     print ('3 - Remover')
     print ("4 - Listar")
-    print ("5 - Emprestar")
-    print ("6 - Retornar")
-    print ('7 - Sair')
+    print ("5 - Emprestar - Retornar")
+    print ('6 - Sair')
     a = int(input("-> "))
 
     if a == 1:
@@ -24,20 +25,18 @@ while a != 7:
         insert(mydb, titulo, autor, ano, sta)
 
     if a == 2:
-        id_livro = int(input("Digite o ID do livro que deseja editar: "))
-        novo_titulo = input("Digite o novo título: ")
-        novo_autor = input("Digite o novo autor: ")
-        novo_ano = int(input("Digite o novo ano de lançamento: "))
-        update(mydb, id_livro, novo_titulo, novo_autor, novo_ano)
-        
-    if a == 3:
         pass
-    if a == 4:
+    elif a == 3:
         pass
-    if a == 5:
-       pesquisa = input("Qual livro você deseja emprestar? ")
+    elif a == 4:
+        listar(mydb)
+
+    elif a == 5:
+       pesquisa = input("Qual livro você deseja interagir? ")
+       status_alt(mydb, pesquisa)
        
-    if a == 6:
-        pass
-    if a == 7:
+    elif a == 6:
         print ("Fechando programa. ")
+
+    else:
+        print ("Erro de digitação. ")
