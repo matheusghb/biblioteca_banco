@@ -1,11 +1,14 @@
 from conexao import connect
 
-def editar(mydb, titulo, autor, ano, sta):
- mycursor = mydb.cursor()
- titulo = input ('fale o nome do livro pfv')
-autor, ano, sta = input ('fale o autor, o ano e o status do livro ( nessa ordem )')
-  sql =  "UPDATE livros SET autor = %s, ano = %s, sta = %s WHERE titulo = %s"
-  val = (titulo, autor, ano, sta) 
+def editar(mydb):
+  mycursor = mydb.cursor()
+  titulo = input ('fale o nome do livro: ')
+  print ("Adicione as informações para o livro (repita caso não desejar modificar)")
+  novotitulo = input("Titulo: ")
+  autor = input("Autor: ")
+  ano = int(input("Ano: "))
+  sql =  "UPDATE livros SET titulo = %s, autor = %s, ano = %s WHERE titulo = %s"
+  val = (novotitulo, autor, ano, titulo) 
   mycursor.execute(sql, val)
 
   mydb.commit()

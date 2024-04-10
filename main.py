@@ -2,12 +2,14 @@ from adicionar import insert
 from conexao import connect
 from listar import listar
 from status import status_alt
+from editar import editar
+from delete import delete
 
 a = 0
 
 mydb = connect()
 
-while a != 7:
+while a != 6:
     print ("1 - Criar")
     print ("2 - Editar")
     print ('3 - Remover')
@@ -25,20 +27,15 @@ while a != 7:
         insert(mydb, titulo, autor, ano, sta)
 
     if a == 2:
-<<<<<<< HEAD
-=======
- 
-    if a == 3:
->>>>>>> cec2aae8980a664839b0a7723185dced635dc456
-        pass
+        editar(mydb)
     elif a == 3:
-        pass
+        delete(mydb)
     elif a == 4:
         listar(mydb)
 
     elif a == 5:
-       pesquisa = input("Qual livro você deseja interagir? ")
-       status_alt(mydb, pesquisa)
+       titulo = input("Qual livro você deseja interagir? ")
+       status_alt(mydb, titulo)
        
     elif a == 6:
         print ("Fechando programa. ")
