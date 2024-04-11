@@ -4,6 +4,7 @@ from listar import listar
 from status import status_alt
 from editar import editar
 from delete import delete
+from addconta import registrar
 
 a = 0
 
@@ -15,7 +16,9 @@ while a != 6:
     print ('3 - Remover')
     print ("4 - Listar")
     print ("5 - Emprestar - Retornar")
-    print ('6 - Sair')
+    print ('6 - Registrar')
+    print ('7 - Login')
+    print ('8 - Sair')
     a = int(input("-> "))
 
     if a == 1:
@@ -38,6 +41,12 @@ while a != 6:
        status_alt(mydb, titulo)
        
     elif a == 6:
+        registrar(mydb)
+
+    elif a == 7:
+        pass
+
+    elif a == 8:
         print ("Fechando programa. ")
 
     else:

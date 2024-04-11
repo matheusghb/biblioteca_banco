@@ -8,6 +8,8 @@ def status_alt(mydb,titulo):
     mycursor.execute(sql,val)
     veri = mycursor.fetchone()
     mydb.commit()
+    mycursor.close()
+    
     if veri != ('none',): 
         print ('1 - Emprestar')
         print ('2 - Retornar')
@@ -21,6 +23,7 @@ def status_alt(mydb,titulo):
                 mycursor.execute(sql,val)
                 mydb.commit()
                 print(mycursor.rowcount, "Editado com sucesso. ")
+                mycursor.close()
             
             else:
                 print ("Esse livro já está salvo. ")
@@ -36,6 +39,7 @@ def status_alt(mydb,titulo):
                 mycursor.execute(sql,val)
                 mydb.commit()
                 print(mycursor.rowcount, "Editado com sucesso. ")
+                mycursor.close()
 
         else:
             print ("Erro de digitação. ")
