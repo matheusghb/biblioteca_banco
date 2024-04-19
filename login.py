@@ -4,7 +4,7 @@ def login():
     username = entry_username.get()
     password = entry_password.get()
 
-    # Verificar se o nome de usuário e senha estão corretos
+    # ver se ta certo
     if username == "admin" and password == "admin":
         label_result.config(text="Login bem-sucedido!")
     else:
@@ -16,7 +16,7 @@ root.title("Login")
 label_username = tk.Label(root, text="Nome de usuário:")
 label_password = tk.Label(root, text="Senha:")
 entry_username = tk.Entry(root)
-entry_password = tk.Entry(root, show="*")  # Para esconder a senha
+entry_password = tk.Entry(root, show="*")  # esconder lol
 button_login = tk.Button(root, text="Login", command=login)
 label_result = tk.Label(root, text="")
 
